@@ -1,3 +1,5 @@
+This fork moves the virtualenv to the end of the prompt.
+
 # Informative git prompt for bash and fish
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/magicmonty/bash-git-prompt?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
