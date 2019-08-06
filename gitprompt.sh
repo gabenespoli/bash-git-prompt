@@ -280,7 +280,7 @@ function git_prompt_config() {
   if [[ "${GIT_PROMPT_ONLY_IN_REPO:-0}" == 1 ]]; then
     EMPTY_PROMPT="${OLD_GITPROMPT}"
   elif [[ "${GIT_PROMPT_WITH_VIRTUAL_ENV:-1}" == 1 ]]; then
-    local ps="$(gp_add_virtualenv_to_prompt)${PROMPT_START}$(${prompt_callback})${PROMPT_END}"
+    local ps="${PROMPT_START}$(${prompt_callback})$(gp_add_virtualenv_to_prompt)${PROMPT_END}"
     EMPTY_PROMPT="${ps//_LAST_COMMAND_INDICATOR_/${LAST_COMMAND_INDICATOR}}"
   else
     local ps="${PROMPT_START}$(${prompt_callback})${PROMPT_END}"
@@ -591,7 +591,7 @@ function updatePrompt() {
     fi
     __add_status        "${ResetColor}${GIT_PROMPT_SUFFIX}"
     
-    NEW_PROMPT="$(gp_add_virtualenv_to_prompt)${PROMPT_START}$(${prompt_callback})${STATUS_PREFIX}${STATUS}${PROMPT_END}"
+    NEW_PROMPT="${PROMPT_START}$(${prompt_callback})${STATUS_PREFIX}${STATUS}$(gp_add_virtualenv_to_prompt)${PROMPT_END}"
   else
     NEW_PROMPT="${EMPTY_PROMPT}"
   fi
