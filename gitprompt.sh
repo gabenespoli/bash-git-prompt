@@ -617,7 +617,7 @@ function gp_add_virtualenv_to_prompt {
     VENV=$(basename "${CONDA_DEFAULT_ENV}")
     ACCUMULATED_VENV_PROMPT="${ACCUMULATED_VENV_PROMPT}${GIT_PROMPT_VIRTUALENV//_VIRTUALENV_/${VENV}}"
   fi
-  echo "${ACCUMULATED_VENV_PROMPT}"
+  echo " ${ACCUMULATED_VENV_PROMPT}"
 }
 
 # Use exit status from declare command to determine whether input argument is a
